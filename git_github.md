@@ -63,16 +63,54 @@ Adding Remote Repositories
 git remote add <alias> <url>
 ```
 
-# Fetching and Pulling / Pushing from Your Remotes
+# Classic workflow
 
-git fetch [remote-name]
-git push [remote-name] [branch-name]
-git remote add <alias> <url>
+See cheatsheet: https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet
+
+```
+git pull
+echo toto > fic1.txt
+git add fic1.txt
+git commit -am "fic1"
+git push
+
+echo titi >> fic1.txt
+```
+Uncommited changes
+
+```
+git diff
+diff --git a/fic1.txt b/fic1.txt
+index fbcf12d..14bc6c5 100644
+--- a/fic1.txt
++++ b/fic1.txt
+@@ -1 +1,2 @@
+ toto
++titi
+
+Or
+
+```
+git status
+```
+
+Commited changes
+
+```
+git diff --cached
+
+[...]
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   fic1.txt
+```
 
 # Basic commands
 
 Sources:
 
-- cheatsheet: https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet
+- 
 
 - Tuto (in french): http://www.alexgirard.com/git-book/
